@@ -1,6 +1,6 @@
 # Site settings
 title: Mostly Harmless
-email: sayan751@gmail.com
+# email: sayan751@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   This contains my (opinionated) notes on various programming topics that I use from time-to-time. 
   However, I not sure how frequent I am going to be.
