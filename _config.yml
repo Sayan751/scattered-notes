@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "baseurl:"
   This contains my (opinionated) notes on various programming topics that I use from time-to-time. 
   However, I not sure how frequent I am going to be.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://mostlyharmless.netlify.com/" # the base hostname & protocol for your site
+url: "http://mostlyharmless.netlify.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
 github_username:  Sayan751
 comments: true
