@@ -12,6 +12,3 @@ comments: true
 
 # Build settings
 markdown: kramdown
-
-plugins:
-  - jekyll-font-awesome
