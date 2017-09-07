@@ -9,7 +9,6 @@ layout: default
       {{ page.date | date: "%b %-d, %Y" }} 
       {% if page.author %} | {{ page.author }}{% endif %} 
       {% if page.meta %} | {{ page.meta}}{% endif %} 
-      {% if page.categories %} | {{ page.categories | array_to_sentence_string }}{% endif %} 
       {% if page.tags %} | {% for tag in page.tags %} <a class="tag" href="/tag/#{{ tag | slugify }}"> {{ tag }} </a> {% endfor %}{% endif %}
     </p>
   </header>
