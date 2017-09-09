@@ -3,6 +3,8 @@ title: Scattered Notes
 # email: sayan751@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
  My (opinionated) notes on various programming tools/languages that I use from time-to-time; basically whatever catches my fancy.
+ In case you liked something here, or noticed any incorrect information, please do leave a comment.
+ Thank you for looking around here. Hope it helps.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://scattered-notes.netlify.com" # the base hostname & protocol for your site
 # twitter_username: jekyllrb
