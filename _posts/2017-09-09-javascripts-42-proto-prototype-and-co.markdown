@@ -13,6 +13,13 @@ As I am thoroughly enjoying the learning, I decided to jot down some rough notes
 So, there will be a series of posts about inheritance in JavaScript, and certainly we will be talking about `proto`, `prototype` & Co. in these posts.
 So the posts are more for me, rather than for you. If you like it then it is a bonus for me. :smile: If you have any feedback, please don't hesitate to leave a comment.
 
+- [`__proto__`](#__proto__)
+- [`prototype`](#prototype)
+- [`__proto__` and inheritance](#__proto__-and-inheritance)
+  - [Basics](#basics)
+  - [Accessing instance-scoped properties of base class](#accessing-instance-scoped-properties-of-base-class)
+  - [Accessing static members of base class](#accessing-static-members-of-base-class)
+
 ## `__proto__` ##
 
 Every JavaScript object has a property called `__proto__`. Example:
@@ -25,9 +32,9 @@ console.log(obj.__proto__); // {}
 
 The example above shows that `__proto__` of `obj` is defined but empty.
 
-When we try to access the member of an object (like `object.member`), JavaScript looks up for the member in `__proto__` of the object if the member is not found in the object itself (like `object.__proto__.member`). If the member is still not found in `object.__proto__`, then it tries for `object.__proto__.__proto__.member` 
-> till either: it is found or the latest `.__proto__` itself is `null`. This explains why JavaScript is said to support prototypal inheritance out of the box. - From [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/docs/classes-emit.html).
+When we try to access the member of an object (like `object.member`), JavaScript looks up for the member in `__proto__` of the object if the member is not found in the object itself (like `object.__proto__.member`). If the member is still not found in `object.__proto__`, then it tries for `object.__proto__.__proto__.member`
 
+> till either: it is found or the latest `.__proto__` itself is `null`. This explains why JavaScript is said to support prototypal inheritance out of the box. - From [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/docs/classes-emit.html).
 
 {% highlight javascript %}
 var obj = {
