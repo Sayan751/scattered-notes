@@ -12,9 +12,9 @@ layout: default
         <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
 
         <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-          <small>{% if post.tags %}{% for tag in post.tags %} <a class="tag" href="/tag/#{{ tag | slugify }}"> {{ tag }} </a> {% endfor %}{% endif %}</small>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>          
         </h2>
+        {% if post.tags %}<i class="fa fa-tags" aria-hidden="true"></i>{% for tag in post.tags %} <a class="tag" href="/tag/#{{ tag | slugify }}"> {{ tag }} </a> {% endfor %}{% endif %}
         <div class="entry">
           {{ post.excerpt }}
         </div>
