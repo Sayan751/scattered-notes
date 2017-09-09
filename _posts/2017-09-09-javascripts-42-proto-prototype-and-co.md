@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "JavaScript's 42: proto, prototype & Co."
-date:   2017-09-09 21:52:00
-categories: JavaScript
+date:   2017-09-09 21:52:04+0100
+categories: javascript
 postid: "javascripts_42_proto_prototype_and_co"
-tags: [JavaScript, proto, prototype, inheritance]
+tags: [javascript, proto, prototype, inheritance]
 ---
 
 After years of working with `.NET`, `SQL`, and `C#`, for last couple of years I am working with `TypeScript`, `Aurelia`, `Node.js`, and `Webpack` (of course after working with `SystemJs`).
