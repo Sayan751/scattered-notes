@@ -15,8 +15,8 @@ So, there will be a series of posts about inheritance in JavaScript, and certain
 
 So the posts are more for me, rather than for you. If you like it then it is a bonus for me. :smile: If you have any feedback, please don't hesitate to leave a comment.
 
-- [`__proto__`](#what-is-__proto__)
-- [`prototype`](#what-is-prototype)
+- [What is `__proto__`?](#what-is-__proto__)
+- [What is `prototype`?](#what-is-prototype)
 - [`__proto__` and inheritance](#__proto__-and-inheritance)
   - [Basics](#basics)
   - [Accessing instance-scoped properties of base class](#accessing-instance-scoped-properties-of-base-class)
