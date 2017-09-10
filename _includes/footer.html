@@ -18,7 +18,7 @@
           <li>
             <a href="https://stackoverflow.com/users/{{ site.stackoverflow }}">              
               <i class="fa fa-stack-overflow fa-2x" aria-hidden="true"></i>
-              <span class="username">{{ site.stackoverflow_username }}</span>
+              <span class="username">{{ site.authorname }}</span>
             </a>
           </li>
           {% endif %}
@@ -28,6 +28,15 @@
             <a href="https://github.com/{{ site.github_username }}">               
               <i class="fa fa-github fa-2x" aria-hidden="true"></i>
               <span class="username">{{ site.github_username }}</span>
+            </a>
+          </li>
+          {% endif %}
+
+          {% if site.linkedin %}
+          <li>
+            <a href="https://stackoverflow.com/users/{{ site.linkedin }}">              
+              <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i>
+              <span class="username">{{ site.authorname }}</span>
             </a>
           </li>
           {% endif %}
