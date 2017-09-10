@@ -9,18 +9,20 @@ tags: [javascript, proto, prototype, inheritance]
 
 After years of working with `.NET`, `SQL`, and `C#`, for last couple of years I am working with `TypeScript`, `Aurelia`, `Node.js`, and `Webpack` (of course after working with `SystemJs`).
 Finally, now I have got the chance and the time to formally learn `JavaScript`. :smile:
+
 As I am thoroughly enjoying the learning, I decided to jot down some rough notes about that.
 So, there will be a series of posts about inheritance in JavaScript, and certainly we will be talking about `proto`, `prototype` & Co. in these posts.
+
 So the posts are more for me, rather than for you. If you like it then it is a bonus for me. :smile: If you have any feedback, please don't hesitate to leave a comment.
 
-- [`__proto__`](#__proto__)
-- [`prototype`](#prototype)
+- [`__proto__`](#what-is-__proto__)
+- [`prototype`](#what-is-prototype)
 - [`__proto__` and inheritance](#__proto__-and-inheritance)
   - [Basics](#basics)
   - [Accessing instance-scoped properties of base class](#accessing-instance-scoped-properties-of-base-class)
   - [Accessing static members of base class](#accessing-static-members-of-base-class)
 
-## `__proto__` ##
+## What is `__proto__`? ##
 
 Every JavaScript object has a property called `__proto__`. Example:
 
@@ -36,6 +38,7 @@ When we try to access the member of an object (like `object.member`), JavaScript
 
 > till either: it is found or the latest `.__proto__` itself is `null`. This explains why JavaScript is said to support prototypal inheritance out of the box. - From [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/docs/classes-emit.html).
 
+ Example:
 {% highlight javascript %}
 var obj = {
     a: 10
@@ -49,7 +52,7 @@ delete obj.a;
 console.log(obj.a); // 20
 {% endhighlight %}
 
-## `prototype` ##
+## What is `prototype`? ##
 
 Every `function` `f` in JavaScript also has a property called `prototype`, which has a property `constructor` which points to `f` itself. Example:
 
@@ -213,7 +216,7 @@ instance1.print();                  // Instance prop: 10, static prop: 2
 instance2.print();                  // Instance prop: 20, static prop: 2
 {% endhighlight %}
 
-So to create a `static` property on class, we can simply define a property on the `Class`, like it is done for `StaticDemo.staticProp`. Recalling that `var instance = new Class()` assigns the `Class.prototype` to `instance.__proto__`, a class member defined not on `prototype` and directly on `Class` instead, the member does not get *tied* with instances created and rather stays *attached* with the `Class`. And that's how the static properties are created in JavaScript.
+So to create a `static` property on class, we can simply define a property on the `Class`, like it is done for `StaticDemo.staticProp`. Recalling that `var instance = new Class()` assigns the `Class.prototype` to `instance.__proto__`, a class member defined not on `prototype` and directly on `Class` instead, does not get *tied* with instances created and rather stays *attached* with the `Class`. And that's how the static properties are created in JavaScript.
 
 So how to inherit the `static` members? Well, that is just a simple matter of copying the member (value-copy for simple-typed member, and reference-copy for object-typed member) from one place to another. So to do that we need another piece of function, as shown below.
 
