@@ -19,7 +19,7 @@ markdown: kramdown
 
 algolia:
   application_id: 'B1G31S5Y3C'
-  index_name:     'scatterednotes'
+  index_name:     'scattered-notes'
 
 plugins:
   - jemoji
