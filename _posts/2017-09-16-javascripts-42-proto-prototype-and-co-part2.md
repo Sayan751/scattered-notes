@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript's 42: proto, prototype & Co. (Part II)"
-date:   2017-09-16 21:52:04+0100
+date:   2017-09-16 10:40:00+0100
 categories: javascript
 postid: "javascripts_42_proto_prototype_and_co_part2"
 tags: [javascript, proto, prototype, inheritance, Object.create]
