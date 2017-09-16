@@ -13,7 +13,7 @@ Finally, now I have got the chance and the time to formally learn `JavaScript`. 
 As I am thoroughly enjoying the learning, I decided to jot down some rough notes about that.
 So, there will be a series of posts about inheritance in JavaScript, and certainly we will be talking about `proto`, `prototype` & Co. in these posts.
 
-So the posts are more for me, rather than for you. If you like it then it is a bonus for me. :smile: If you have any feedback, please don't hesitate to leave a comment.
+Therefor, the posts are more for me, rather than for you. If you like it then it is a bonus for me. :smile: If you have any feedback, please don't hesitate to leave a comment.
 
 - [What is `__proto__`?](#what-is-__proto__)
 - [What is `prototype`?](#what-is-prototype)
@@ -67,7 +67,7 @@ console.log(MyFun.prototype.constructor === MyFun); // true
 
 ## `__proto__` and inheritance ##
 
-### **Basics** ###
+### Basics ###
 
 Because JavaScript tries to fetch member from `__proto__` recursively, `__proto__` is useful to implement prototypical inheritance.
 A simple way to implement inheritance would be to assign `<Base>.prototype` to `__proto__.__proto__` to an object which wants capabilities of `<Base>`. Example:
