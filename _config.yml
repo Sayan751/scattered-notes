@@ -17,9 +17,9 @@ comments: true
 # Build settings
 markdown: kramdown
 
-# algolia:
-#   application_id: 'B1G31S5Y3C'
-#   index_name:     'scatterednotes'
+algolia:
+  application_id: 'B1G31S5Y3C'
+  index_name:     'scatterednotes'
 
 plugins:
   - jemoji
