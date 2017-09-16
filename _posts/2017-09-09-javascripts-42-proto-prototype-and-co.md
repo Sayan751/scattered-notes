@@ -7,8 +7,8 @@ postid: "javascripts_42_proto_prototype_and_co"
 tags: [javascript, proto, prototype, inheritance]
 ---
 
-After years of working with `.NET`, `SQL`, and `C#`, for last couple of years I am working with `TypeScript`, `Aurelia`, `Node.js`, and `Webpack` (of course after working with `SystemJs`).
-Finally, now I have got the chance and the time to formally learn `JavaScript`. :smile:
+After years of working with .NET, SQL, and C#, for last couple of years I am working with TypeScript, Aurelia, Node.js, and Webpack (of course after working with SystemJs).
+Finally, now I have got the chance and the time to formally learn JavaScript. :smile:
 
 As I am thoroughly enjoying the learning, I decided to jot down some rough notes about that.
 So, there will be a series of posts about inheritance in JavaScript, and certainly we will be talking about `proto`, `prototype` & Co. in these posts.
@@ -70,7 +70,7 @@ console.log(MyFun.prototype.constructor === MyFun); // true
 ### Basics ###
 
 Because JavaScript tries to fetch member from `__proto__` recursively, `__proto__` is useful to implement prototypical inheritance.
-A simple way to implement inheritance would be to assign `<Base>.prototype` to `__proto__.__proto__` to an object which wants capabilities of `<Base>`. Example:
+A simple way to implement inheritance would be to assign `<Base>.prototype` to `__proto__.__proto__` to an object, which wants capabilities of `<Base>`. Example:
 
 {% highlight javascript %}
 // We have two classes (function in pure JavaScript) Animal, and Bird
@@ -94,7 +94,7 @@ console.log("Is bird a Bird? " + (bird instanceof Bird) + ", Is bird an Animal? 
 
 We note here that `fly` is defined on `Bird.prototype`, and we access that from `bird` object. This is possible as `fly` is made available to `bird.__proto__`, by `new Bird()`.
 
-In fact, `var bird = new Bird()` assigns `Bird.prototype` to `bird.__proto__`. In JavaScript, this makes all members defined on class level (i.e. `Type.prototype`, here `Bird.prototype`) to the instances of that class (Refer [this](https://stackoverflow.com/a/14593952/2270340)).
+In fact, `var bird = new Bird()` assigns `Bird.prototype` to `bird.__proto__`. In JavaScript, this makes all members defined on class' prototype level (i.e. `Type.prototype`, here `Bird.prototype`) to the instances of that class (Refer [this](https://stackoverflow.com/a/14593952/2270340)).
 
 The fact that `bird.__proto__ === Bird.prototype` enables us to write the inheritance for the `Bird` class from `Animal` class more concisely, as follows.
 
@@ -117,9 +117,9 @@ console.log("Is bird a Bird? " + (bird instanceof Bird) + ", Is bird an Animal? 
 **Note:** From [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof):
 >The `instanceof` operator tests whether an object in its prototype chain has the prototype property of a constructor.
 
-### **Accessing instance-scoped properties of base class** ###
+### Accessing instance-scoped properties of base class ###
 
-So far our inheritance implementation works quite good. So, lets consider other scenarios. With inheritance, we can access the instance-scoped properties of the class. Let's see if we can do that using our implementation of inheritance. So, let's add new properties to the classes.
+So far our inheritance implementation works quite good. Let's consider other scenarios. With inheritance, we can access the instance-scoped properties of the class. Let's see if we can do that using our implementation of inheritance. For this, we add some new properties to the classes (such as `claws` in `Animal`, and `wings` in `Bird`).
 
 {% highlight javascript %}
 function Animal() { this.claws = "An animal has claws"; }
@@ -132,7 +132,7 @@ console.log(bird.wings); // A bird has wings
 console.log(bird.claws); // undefined
 {% endhighlight %}
 
-So we see that using our current implementation, we can't access the instance-scoped property `claws` which is defined in `Animal`.
+We see that using our current implementation, we can't access the instance-scoped property `claws` which is defined in `Animal`.
 
 However, before delving into that, let's quickly discuss what `this` means with `new Bird()`. From [TypeScript Deep Dive](https://basarat.gitbooks.io/typescript/content/docs/classes-emit.html):
 >... let's look at effect of `new` on `this` inside the called function. Basically `this` inside the called function is going to point to the newly created object that will be returned from the function. ...
@@ -145,9 +145,9 @@ console.log(bird.wings);           // A bird has wings
 console.log(bird.__proto__.wings); // undefined
 {% endhighlight %}
 
-So, from the example we see that `this` in the function eventually points to `bird` object (instance of `Bird`), and thereby making all the properties declared on `this` inside the function, available to the `bird` object. Additionally we also note that `wings` exists directly on `bird` object and not on `bird.__proto__`.
+From the example we see that `this` in the function eventually points to `bird` object (instance of `Bird`), and thereby making all the properties declared on `this` inside the function, available to the `bird` object. Additionally we also note that `wings` exists directly on `bird` object and not on `bird.__proto__`.
 
-So to reuse the properties defined in base classes from the instance of the derived classes, we need to *put* the properties of base class to the `this` object of derived class. The common way to achieve this is to call the constructor of base class from the constructor of derived class (like we do in C#, or Java).
+Therefore, to reuse the properties defined in base classes from the instance of the derived classes, we need to *put* the properties of base class to the `this` object of derived class. The common way to achieve this is to call the constructor of base class from the constructor of derived class (like we do in C#, or Java).
 
 {% highlight javascript %}
 function Animal() { this.claws = "An animal has claws"; }
@@ -193,11 +193,11 @@ We see that based on different values of `thisArg` parameter we can produce diff
 
 And this is what is done to inherit the instance-scoped properties from the Base class. So we call `Base.call(this)` from the constructor of `Derived`, where `this` points to the instance of `Derived` being constructed, and thereby *putting* the properties of `Base` to the instance of `Derived`.
 
-### **Accessing static members of base class** ###
+### Accessing static members of base class ###
 
-So we are almost done. One last thing is to inherit the `static` members. Yes, using JavaScript that is possible. So the first question is to how to have `static` members in classes in JavaScript.
+We are almost done. One last thing is to inherit the `static` members. Yes, using JavaScript that is possible. However, the first question is to how to have `static` members in classes in JavaScript.
 
-Well `static` members roughly refers to the members those are tied with class and not to the instances of the class, and thus when the `static` members are updated, the updated value is available to all the instances of the class. So we access the `static` members are accessed like `ClassName.staticMember`, or `ClassName.staticMethod()`, and that is what we need to implement the `static` members in class. Example:
+Well, `static` members roughly refers to the members those are tied with class and not to the instances of the class, and thus when the `static` members are updated, the updated value is available to all the instances of the class. So, we access the `static` members are accessed like `ClassName.staticMember`, or `ClassName.staticMethod()`, and that is what we need to implement the `static` members in class. Example:
 
 {% highlight javascript %}
 function StaticDemo(prop1) {
@@ -216,9 +216,9 @@ instance1.print();                  // Instance prop: 10, static prop: 2
 instance2.print();                  // Instance prop: 20, static prop: 2
 {% endhighlight %}
 
-So to create a `static` property on class, we can simply define a property on the `Class`, like it is done for `StaticDemo.staticProp`. Recalling that `var instance = new Class()` assigns the `Class.prototype` to `instance.__proto__`, a class member defined not on `prototype` and directly on `Class` instead, does not get *tied* with instances created and rather stays *attached* with the `Class`. And that's how the static properties are created in JavaScript.
+Therefore, to create a `static` property on class, we can simply define a property on the `Class`, like it is done for `StaticDemo.staticProp`. Recalling that `var instance = new Class()` assigns the `Class.prototype` to `instance.__proto__`, a class member defined not on `prototype` and directly on `Class` instead, does not get *tied* with instances created and rather stays *attached* with the `Class`. And that's how the static properties are created in JavaScript.
 
-So how to inherit the `static` members? Well, that is just a simple matter of copying the member (value-copy for simple-typed member, and reference-copy for object-typed member) from one place to another. So to do that we need another piece of function, as shown below.
+Then how to inherit the `static` members? Well, that is just a simple matter of copying the member (value-copy for simple-typed member, and reference-copy for object-typed member) from one place to another. So to do that we need another piece of function, as shown below.
 
 {% highlight javascript %}
 var inheritStatics = function (derived, base) {
@@ -234,7 +234,7 @@ and from [`hasOwnProperty()` documentation in MDN](https://developer.mozilla.org
 
 >The `hasOwnProperty()` method returns a boolean indicating whether the object has the specified property as own (not inherited) property.
 
-So the function `inheritStatics` copies the properties defined on `base` to `derived`. In general, `base`, and `derived` can be any two general objects. Example:
+The function `inheritStatics` copies the properties defined on `base` to `derived`. In general, `base`, and `derived` can be any two general objects. Example:
 
 {% highlight javascript %}
 var obj1 = {
@@ -250,7 +250,7 @@ var obj2 = {
 
 inheritStatics(obj2, obj1);
 console.log(obj2);                            // { propa: 'A', prop1: 1, innerObj: { inner1: 10 } }
-console.log(obj1.innerObj === obj2.innerObj); // true // reference of the object is copied.
+console.log(obj1.innerObj === obj2.innerObj); // true //<-- reference of the object is copied.
 {% endhighlight %}
 
 Lastly, we see it in action for inheriting `static`s from base class to derived class.
@@ -300,6 +300,6 @@ console.log(Animal.printPopulation === Bird.printPopulation, Animal.printPopulat
 
 So, yes, on ground level that's all we need to implement inheritance in JavaScript. This is quite something right?
 
-Well this has been a long post, as per my standard. However, there is still somethings left to discuss on this topic, which I am going to discuss on future posts.
+Well, this has been a long post, as per my standard. However, there is still somethings left to discuss on this topic, which I am going to discuss on future posts.
 
 Hope this helps.
