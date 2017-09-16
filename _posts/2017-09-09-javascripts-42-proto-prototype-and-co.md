@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "JavaScript's 42: proto, prototype & Co."
+title:  "JavaScript's 42: proto, prototype & Co. (Part I)"
 date:   2017-09-09 21:52:04+0100
 categories: javascript
 postid: "javascripts_42_proto_prototype_and_co"
@@ -300,6 +300,6 @@ console.log(Animal.printPopulation === Bird.printPopulation, Animal.printPopulat
 
 So, yes, on ground level that's all we need to implement inheritance in JavaScript. This is quite something right?
 
-Well, this has been a long post, as per my standard. However, there is still somethings left to discuss on this topic, which I am going to discuss on future posts.
+Well, this has been a long post, as per my standard. However, there is still somethings left to discuss on this topic, which I am going to discuss on future posts ([second post](2017-09-16-javascripts-42-proto-prototype-and-co-part2.md)).
 
 Hope this helps.
