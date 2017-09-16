@@ -8,7 +8,7 @@ tags: [javascript, proto, prototype, inheritance, Object.create]
 ---
 
 This is the second post on inheritance in JavaScript.
-In the [first post](2017-09-09-javascripts-42-proto-prototype-and-co.md) we have seen that how to use `proto`, and `prototype` to implement inheritance in JavaScript.
+In the [first post]({{ site.baseurl }}{% post_url 2017-09-09-javascripts-42-proto-prototype-and-co %}) we have seen that how to use `proto`, and `prototype` to implement inheritance in JavaScript.
 However, as the property `__proto__` is not *conveniently* available (for example in IDE and such), another way to write the same thing would be to use `Object.create`.
 
 In this post we are going to discuss that.
@@ -45,7 +45,7 @@ console.log(derv.__proto__ === base);   // true
 
 So, how `Object.create` can be used to implement inheritance? Well, we know that for inheritance we need `Derived.prototype.__proto__ = Base.prototype`. From the above example, we can see that `Object.create` assigns `base` to `derv.__proto__`. Then to implement inheritance with `Object.create`, we simply need to do `Derived.prototype = Object.create(Base.prototype)`.
 
-However, there are couple of things to note here. We'll discuss these with our working example of `Animal` and `Bird` (check [first post](2017-09-09-javascripts-42-proto-prototype-and-co.md)).
+However, there are couple of things to note here. We'll discuss these with our working example of `Animal` and `Bird` (check [first post]({{ site.baseurl }}{% post_url 2017-09-09-javascripts-42-proto-prototype-and-co %})).
 
 {% highlight javascript %}
 function Animal() {}
