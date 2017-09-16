@@ -17,5 +17,10 @@ comments: true
 # Build settings
 markdown: kramdown
 
+algolia:
+  application_id: 'scattered-notes'
+  index_name:     'scattered-notes'
+
 plugins:
   - jemoji
+  - algoliasearch-jekyll
