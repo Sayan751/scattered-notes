@@ -24,3 +24,5 @@ markdown: kramdown
 plugins:
   - jemoji
   - algoliasearch-jekyll
+
+exclude: [vendor]
