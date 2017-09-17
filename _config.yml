@@ -20,6 +20,13 @@ markdown: kramdown
 algolia:
   application_id: 'B1G31S5Y3C'
   index_name:     'scattered-notes'
+  search_only_api_key: '3a1b072dbc01a974add42a9139365135'
+  excluded_files:
+    - 404.html
+    - index.html
+    - tag.html
+    - about.html
+    - search.html
 
 plugins:
   - jemoji

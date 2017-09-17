@@ -1,0 +1,22 @@
+--- 
+layout: default 
+title: Search 
+---
+<form id="algolia-search-form">
+    <div class="input-group">
+        <input type="text" class="form-control algolia__input" id="algolia-search-input" placeholder="Search this blog">
+        <span class="input-group-addon" id="algolia-search-button"><i class="fa fa-search fa-2x"></i>
+        </span>
+    </div>
+</form>
+<br/>
+<div>
+    <h2 class="pull-left">Search Results</h2>
+    <img class="pull-right" width="20%" src="https://www.algolia.com/static_assets/images/press/downloads/search-by-algolia.svg"
+    />
+    <hr width="100%" />
+    <div id="result" class="hidden">
+    </div>
+</div>
+
+{% include algolia.html %}

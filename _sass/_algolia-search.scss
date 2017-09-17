@@ -1,0 +1,28 @@
+// /* Search form */
+.algolia__input {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    padding: 2rem 2rem;
+}
+
+// /* Search results */
+.algolia__result {
+    margin-bottom: 1rem;
+    padding-bottom: 1em;
+    padding-top: 2em;
+}
+
+.algolia__result-link .algolia__result-highlight {
+    background-color: #D3E8F6;
+    background-color: rgba(38, 139, 210, 0.2);
+}
+.algolia__result-text .algolia__result-highlight {
+    font-weight: bold;
+}
+
+.grad-hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}

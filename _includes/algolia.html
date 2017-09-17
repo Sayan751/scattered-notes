@@ -1,0 +1,12 @@
+<script>
+    window.ALGOLIA_CONFIG = {
+      'applicationId': '{{ site.algolia.application_id }}',
+      'indexName': '{{ site.algolia.index_name }}',
+      'apiKey': '{{ site.algolia.search_only_api_key }}',
+      'baseurl': '{{ site.baseurl }}'
+    }    
+  </script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/algoliasearch.helper/2/algoliasearch.helper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2/moment.min.js"></script>
+  <script src="{{ site.baseurl }}/js/algolia.js"></script>
