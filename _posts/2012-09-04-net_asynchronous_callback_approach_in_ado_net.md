@@ -2,7 +2,7 @@
 layout: post
 title:  ".NET: Asynchronous Callback Approach in ADO.NET"
 date:   2012-09-04 19:39:00+0530
-categories: .net
+categories: sql
 postid: "net_asynchronous_callback_approach_in_ado_net"
 tags: [.net, ado.net, asynchronous, callback]
 ---
