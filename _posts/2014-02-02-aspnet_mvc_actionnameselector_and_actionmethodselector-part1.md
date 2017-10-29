@@ -136,7 +136,7 @@ Now if you change the `HttpPost` attribute on `JustAnotherAction` - the third ac
 
 That’s all for today. I wish to write another part of this story depicting how to make your own `ActionMethodSelector`, the link for which I’ll provide very shortly (at least that is what I believe).
 
-P.S.: Here is the link to the second part of the article.
+P.S.: Here is the [link to the second part]({{ site.baseurl }}{% post_url 2014-02-02-aspnet_mvc_actionnameselector_and_actionmethodselector-part2 %}) of the article.
 
 Hope this helps.
 
