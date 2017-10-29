@@ -2,7 +2,7 @@
 layout: post
 title:  "Filter an object array using delegates, without using LINQ"
 date:   2013-08-04 18:30:00+0530
-categories: .net
+categories: dotnet
 postid: "filter_an_object_array_using_delegates_without_using_linq"
 tags: [.net, delegate, filter using delegate]
 ---
