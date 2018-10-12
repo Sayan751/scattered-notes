@@ -105,20 +105,20 @@ However as we are implementing the validation rules using validation configurati
 There are two ways you can use custom validators with EntLib CABC:
 
 1. You can add it in your validation configuration xml using `Add Custom Validator` then add your `dll` (using `Add From File`) in which the validator resides and use it accordingly. In this approach we define a constructor in our custom validator with a `NameValueCollection` argument. The idea is to pass the required value (to validate) from validation configuration xml to the class in form of `NameValueCollection`. We'll not discuss on that in this post as we are going to discuss an approach I find a bit cleaner and more integrated with ENtLib CABC (If I have disappointed you by not discussing this, I strongly recommend you to go through the [Hands-On lab](http://www.microsoft.com/en-in/download/details.aspx?id=40286). This part is described in detail there).
-![Fig. 1: Adding Custom Validator by adding .dll file](http://2.bp.blogspot.com/-QjNC0-uWprc/UyuXIOkAH0I/AAAAAAAAFGY/J5YMBuIUIJQ/s1600/Adding+Custom+Validator.png)
+![Fig. 1: Adding Custom Validator by adding .dll file](https://i.postimg.cc/T1bMc7p9/Adding-Custom-Validator-1.png)
 1. Integrate with EntLib CABC in such a way that it appear in the list of validators. As per my personal opinion this looks way cooler than the previous approach.
-![Fig. 2: Making your custom validator appear in the validator list](http://1.bp.blogspot.com/-rLdnob_P2gE/Uyua56m8SeI/AAAAAAAAFGs/NpwfjjRNg6M/s1600/Custom+Validator+Integrated.png)
+![Fig. 2: Making your custom validator appear in the validator list](https://i.postimg.cc/pVFg4SLQ/Custom-Validator-Integrated-1.png)
 
 Now to integrate with CABC in either approach you need to define ValidatorData for your Custom Validator. Validator Data provides resources for the validator in CABC UI.
 The image below depicts the structure:
 
-![Fig. 3: Folder Structure of Custom Validator class library](http://1.bp.blogspot.com/-tsXujK-YRO8/UyukEFhH4cI/AAAAAAAAFG8/YBxdPSYQLyQ/s1600/CustoValidator.JPG)
+![Fig. 3: Folder Structure of Custom Validator class library](https://i.postimg.cc/tCGLjzsK/Custo-Validator-1.jpg)
 
 `Resources\NumberOnlyValidatorData.Resx` contains all the resources for `NumberOnlyValidator` and `Confiugration\NumberOnlyValidatorData.cs` uses the resources and instantiates the custom validator. Now if you are thinking what on the earth is `NumberOnlyAttributeAdapter`, hold your horses, we will discuss that too at right time. Let's stick to `ValidatorData` for now.
 
 Ok so in the `.resx` file add the entries as shown below:
 
-![Fig 4. Resources for custom validator](http://4.bp.blogspot.com/-r4bW0krAfc0/Uy6Pa1NhO0I/AAAAAAAAFHM/J9LEIwtpky4/s1600/Resource.JPG)
+![Fig 4. Resources for custom validator](https://i.postimg.cc/7Y1jYT7f/Resource-1.jpg)
 
 Remember to change the `AccessModifier` to public for the resource file. Now utilizing this resource create custom validator data class inheriting from `ValueValidatorData`.
 
@@ -152,7 +152,7 @@ namespace Validation.CustomValidator.Configuration
 There are few things to note about this class:
 
 - Note that we have used the resource file keys in decorating the class with `ResourceDisplayNameAttribute` and `ResourceDescriptionAttribute`. These simply to generate the desired text for the validator name and description. If you check the below image you will notice that the key value used in `ResourceDisplayNameAttribute` is appearing as the `Add <ValidaotrName>` in the list of available validators and key value used in `ResourceDescriptionAttribute` appearing as the validator description at the end of the validator list.
-![Fig. 5: Making your custom validator appear in the validator list](http://1.bp.blogspot.com/-rLdnob_P2gE/Uyua56m8SeI/AAAAAAAAFGs/NpwfjjRNg6M/s1600/Custom+Validator+Integrated.png)
+![Fig. 5: Making your custom validator appear in the validator list](https://i.postimg.cc/pVFg4SLQ/Custom-Validator-Integrated-1.png)
 - Check the default constructor. This constructor will be called when we will try to add this validator from EntLib CABC. Hence, it is very important to specify the type of validator here. Otherwise the type attribute for the validator will come as empty and at runtime we will not get the expected behavior.
 - We also need to override one virtual function `DoCreateValidator` to return our own custom validator.
     {% highlight csharp %}
@@ -203,7 +203,7 @@ If you have done so far, the next step would be to make the custom validator app
 
 1. Copy the `dll` to the same directory in which the exe of CABC is (`EntLibConfig.exe/EntLibConfig-32.exe`). Do this if you have not installed EnterpriseLibrary Config extension for visual studio.
 1. Add the relative path of your custom validator `dll` to the EntLib path of your solution. In case you have installed EnterpriseLibrary Config extension for visual studio, you will find this approach more useful. Note: do not remove the existing paths, instead just append your `dll`'s path. Check below image for reference:
-![Fig. 6: Add relative path of custom validator dll's to the EntLib path of solution](http://4.bp.blogspot.com/-v5kzyswzV4E/U1yOtKThFLI/AAAAAAAAF5o/sOlClIJdMDA/s1600/EntLib+v6+path+in+Soln.JPG)
+![Fig. 6: Add relative path of custom validator dll's to the EntLib path of solution](https://i.postimg.cc/7ZxdCYMX/Ent-Lib-v6-path-in-Soln-1.jpg)
 
 Now when you open your validation config xml in CABC and try to add new validator, you should see your own custom validator in the Validator list as shown above and now you can apply this validator on properties of your class.
 

@@ -76,7 +76,7 @@ public class YourCustomClass
 If you want to add objects of class `YourCustomClass` to the session, you must declare the same as `Serializable` by adding the attribute as shown above.
 If the class is not specified as `Serializable` and code tries to add the objects of this class to session, code will throw `HttpException` exception. Check the below screen shot for better understanding:
 
-![Exception screenshot](http://2.bp.blogspot.com/-9MDx2i4t138/UILjq71vJtI/AAAAAAAAAjI/SDWCwWdLQM0/s1600/session+state1.JPG).
+![Exception screenshot](https://i.postimg.cc/7L4vnnk1/session-state1-1.jpg).
 
 Well, that all for today. As always, don’t hesitate to correct me.
 

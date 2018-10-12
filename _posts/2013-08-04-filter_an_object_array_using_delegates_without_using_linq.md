@@ -48,7 +48,7 @@ foreach (int num in filteredArray)
 
 Output:
 
-![output1](http://2.bp.blogspot.com/-G6_UQErBsYw/Uf472MC8krI/AAAAAAAAA3I/rjydNnY5L5k/s1600/1.png)
+![output1](https://i.postimg.cc/kgrL7vBr/1-1.png)
 
 ## Variant 2: Filtering a complex type array using delegate ##
 
@@ -115,7 +115,7 @@ foreach (TargetClass tobj in
 
 Output:
 
-![Output2](http://3.bp.blogspot.com/-U4U617ObwP0/Uf478AMa37I/AAAAAAAAA3U/viWJhD4ezUk/s1600/2.png)
+![Output2](https://i.postimg.cc/FHj8zkLY/2-1.png)
            
 ## Variant 3: Filtering a complex type array using Func expression ##
 
@@ -151,7 +151,7 @@ foreach (TargetClass tobj in
 
 Output:
 
-![output3](http://4.bp.blogspot.com/-O0edV85aRf4/Uf478AEUGlI/AAAAAAAAA3g/TOWVcpwv-rU/s1600/3.png)
+![output3](https://i.postimg.cc/sX00qptN/3-1.png)
 
 ## Variant 4: Filtering a complex type array without any loop (Using System.Array class) ##
 
@@ -194,7 +194,7 @@ foreach (TargetClass tobj in
 
 Output:
 
-![output4](http://2.bp.blogspot.com/-Zc_xKUpfQZY/Uf478Ra-xBI/AAAAAAAAA3Y/iLm2opKkwUE/s1600/4.png)
+![output4](https://i.postimg.cc/j2wkbDTd/4-1.png)
 
 As always, don’t hesitate to correct me.
 

@@ -63,7 +63,7 @@ public class HomeController : Controller
 
 When you run this application, you get following exception as both `Index` methods are selected by MVC's default Action Method Selector.
 
-![Ambiguous method name](http://2.bp.blogspot.com/-4WKDxPGZvqk/Uu3Oew59yTI/AAAAAAAABfw/qGdOPs-a-RA/s1600/Ambiguous+Method+Name+1.JPG)
+![Ambiguous method name](https://i.postimg.cc/WzBYbspm/Ambiguous-Method-Name-1-1.jpg)
 
 So to fix this (and also to POST your form properly) you put a `[HttpPost]` attribute on the top of the second action method which looks like below and your controller executes fine now:
 
@@ -130,7 +130,7 @@ View:
 
 So now if you try to post the Form you will get the following error:
 
-![Ambiguous method name](http://4.bp.blogspot.com/-4C1Y__ILhOA/Uu3OEm_-5PI/AAAAAAAABfU/QubKzD_Rkss/s1600/Ambiguous+Method+Name2.JPG)
+![Ambiguous method name](https://i.postimg.cc/kgm9TmNt/Ambiguous-Method-Name2-1.jpg)
 
 Now if you change the `HttpPost` attribute on `JustAnotherAction` - the third action method – to `HttpDelete` or `HttpPut`, it will not be selected when you again post the form and hence the MVC application will not raise any error.
 

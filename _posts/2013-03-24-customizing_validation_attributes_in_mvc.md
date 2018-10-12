@@ -29,7 +29,7 @@ public class Person
 
 Which will give you the following output:
 
-![validation](http://1.bp.blogspot.com/-jxdkbM92nOs/UU6cUvd-NRI/AAAAAAAAAqI/7LC-eOXT-EQ/s1600/Img1.JPG)
+![validation](https://i.postimg.cc/9MXvvXzr/Img1-1.jpg)
 
 This default behavior is good for less complex application, where you can apply factory made validation without any considerable effort from your side.
 
@@ -220,8 +220,8 @@ Note that we’ve passed regular expression to validate numeric digits.
 
 In order to create view, right click any method name in the controller and select `Add View` option. Create two strongly typed views named `Index.cshtml` and `Success.cshtml`. While creating the views also select the option to use layout or master page.
 
-![Add Index View](http://2.bp.blogspot.com/-tpeh0M4CDDg/UU6cXjw18zI/AAAAAAAAAqY/bJfcU7NmYjk/s1600/Img2.JPG){: style="width: 45%"}
-![Add Success View](https://2.bp.blogspot.com/-kwmAuyRvaoA/UU6cXhAy5II/AAAAAAAAAqc/cAMveAzRihA/s1600/Img3.JPG){: style="width: 45%"}
+![Add Index View](https://i.postimg.cc/LXyrRdZv/Img2-1.jpg){: style="width: 45%"}
+![Add Success View](https://i.postimg.cc/8cjxzyRG/Img3-1.jpg){: style="width: 45%"}
 
 Make sure the content of the `Index.cshtml` and `Sucess.cshtml` matches the below content:
 
@@ -261,7 +261,7 @@ Make sure the content of the `Index.cshtml` and `Sucess.cshtml` matches the belo
 
 Now run the application. You can test the custom validation attribute by entering invalid values:
 
-![validation](http://4.bp.blogspot.com/-efSgezZ-KWE/UU6cXn8NKYI/AAAAAAAAAqk/CWu_YHTurkY/s1600/Img4.JPG)
+![validation](https://i.postimg.cc/C5XXBj7q/Img4-1.jpg)
 
 If you notice, the page is making a post back to check the values. Because we’ve not yet applied client side validation.
 
@@ -463,7 +463,7 @@ The last step is to check whether your web.config has the below settings or not:
 
 And you are ready to go. Test your application in browser, enter a non-numeric value in the text box and just move the focus from it without clicking the submit button and see the result.
 
-![Validation](https://1.bp.blogspot.com/-wnClCWRaSbA/UU6cX8Fe1HI/AAAAAAAAAqo/m3EELoKc-zk/s1600/Img5.JPG)
+![Validation](https://i.postimg.cc/L4brbpS8/Img5-1.jpg)
 
 You can also get the full code from [here](https://docs.google.com/file/d/0B4Wl0CqfSBnkVUdiNFVjTUpINjQ/edit?usp=sharing).
 
