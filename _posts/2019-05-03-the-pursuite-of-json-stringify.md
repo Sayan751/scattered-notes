@@ -156,13 +156,13 @@ for (const iteration of iterations) {
 You can run the code, use your favorite visualization tool to generate charts, and see if it closely matches the results presented in this post. For convenience, I am adding the result of a sample run.
 
 |Iteration|Variant#1<br>Total (d1)| Variant#1<br>Average| Variant#2<br>Total (d2)| Variant#2<br>Average| d1/d2|
-|---:|---:|---:|---:|---:|---:|
-|10|0.9774|0.0977|0.1089|0.0109|8.971|8.971|
-|100|2.074|0.0207|0.1437|0.0014|14.434|14.434|
-|1000|2.6187|0.0026|1.5786|0.0016|1.6589|1.6589|
-|1e+06|1741.3541|0.0017|870.619|9e-04|2.0001|2.0001|
-|5e+06|8770.4606|0.0018|4104.5207|8e-04|2.1368|2.1368|
-|1e+07|17333.5307|0.0017|8173.5535|8e-04|2.1207|2.1207|
+|---:|---:|---:|---:|---:|
+|10|0.9774|0.0977|0.1089|0.0109|8.971|
+|100|2.074|0.0207|0.1437|0.0014|14.434|
+|1000|2.6187|0.0026|1.5786|0.0016|1.6589|
+|1e+06|1741.3541|0.0017|870.619|9e-04|2.0001|
+|5e+06|8770.4606|0.0018|4104.5207|8e-04|2.1368|
+|1e+07|17333.5307|0.0017|8173.5535|8e-04|2.1207|
 {:.table .table-striped}
 
 ![Performance chart](/images/jsonIgnore.svg "Performance comparison between 2 variants of @jsonIgnore")
